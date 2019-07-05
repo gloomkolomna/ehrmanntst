@@ -1,0 +1,3 @@
+﻿UPDATE ARTICLEGROUPS Set 
+Name = @Name 
+WHERE Id = @id

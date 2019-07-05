@@ -44,6 +44,5 @@ namespace Ehrmann.Core.Models.Impls
         public int OwnerId { get; set; }
         public string Name { get; set; }
         public IEnumerable<ICoreConditionType> ConditionTypes { get; set; }
-
     }
 }

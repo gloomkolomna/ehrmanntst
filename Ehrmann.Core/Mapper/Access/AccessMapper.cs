@@ -33,9 +33,59 @@ namespace Ehrmann.Core.Mapper.Access
             throw new System.NotImplementedException();
         }
 
-        public bool DeleteContract(int id)
+        public bool DeleteContract(ICoreContract contract)
         {
             throw new System.NotImplementedException();
+        }
+
+        public ICoreArticleGroup GetArticleGroup(int id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public IEnumerable<ICoreArticleGroup> GetArticleGroups(ICoreContract contract)
+        {
+            throw new NotImplementedException();
+        }
+
+        public ICoreArticleGroup CreateArticleGroup(ICoreContract contract, string name)
+        {
+            throw new NotImplementedException();
+        }
+
+        public ICoreArticleGroup UpdateArticleGroup(ICoreArticleGroup articleGroup)
+        {
+            throw new NotImplementedException();
+        }
+
+        public bool DeleteArticleGroup(ICoreArticleGroup articleGroup)
+        {
+            throw new NotImplementedException();
+        }
+
+        public ICoreConditionType GetConditionType(int id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public IEnumerable<ICoreConditionType> GetConditionTypes(ICoreArticleGroup articleGroup)
+        {
+            throw new NotImplementedException();
+        }
+
+        public ICoreConditionType CreateConditionType(ICoreArticleGroup articleGroup, string name, int retro, int retroDistr, int rku, int rkuDistr)
+        {
+            throw new NotImplementedException();
+        }
+
+        public ICoreConditionType UpdateConditionType(ICoreConditionType conditionType)
+        {
+            throw new NotImplementedException();
+        }
+
+        public bool DeleteConditionType(ICoreConditionType conditionType)
+        {
+            throw new NotImplementedException();
         }
     }
 }

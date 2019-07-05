@@ -60,6 +60,16 @@ namespace Ehrmann.Core.Mapper.Sql
         public abstract IEnumerable<ICoreContract> GetContracts();
         public abstract ICoreContract CreateContract(string name, DateTime startDate, DateTime endDate);
         public abstract ICoreContract UpdateContract(ICoreContract contract);
-        public abstract bool DeleteContract(int id);
+        public abstract bool DeleteContract(ICoreContract contract);
+        public abstract ICoreArticleGroup GetArticleGroup(int id);
+        public abstract IEnumerable<ICoreArticleGroup> GetArticleGroups(ICoreContract contract);
+        public abstract ICoreArticleGroup CreateArticleGroup(ICoreContract contract, string name);
+        public abstract ICoreArticleGroup UpdateArticleGroup(ICoreArticleGroup articleGroup);
+        public abstract bool DeleteArticleGroup(ICoreArticleGroup articleGroup);
+        public abstract ICoreConditionType GetConditionType(int id);
+        public abstract IEnumerable<ICoreConditionType> GetConditionTypes(ICoreArticleGroup articleGroup);
+        public abstract ICoreConditionType CreateConditionType(ICoreArticleGroup articleGroup, string name, int retro, int retroDistr, int rku, int rkuDistr);
+        public abstract ICoreConditionType UpdateConditionType(ICoreConditionType conditionType);
+        public abstract bool DeleteConditionType(ICoreConditionType conditionType);
     }
 }

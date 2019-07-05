@@ -1,0 +1,1 @@
+﻿INSERT INTO CONDITIONTYPE(Name,Retro,RetroDistr,Rku,RkuDistr,OwnerId) output INSERTED.Id VALUES(@name,@retro,@retroDistr,@rku,@rkuDistr,@ownerId)

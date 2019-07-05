@@ -155,10 +155,17 @@ namespace Ehrmann.Core.Mapper.Sql.MSSQL
             }
         }
 
-        public override bool DeleteContract(int id)
+        public override bool DeleteContract(ICoreContract contract)
         {
             try
             {
+                foreach (var contractArticleGroup in contract.ArticleGroups)
+                {
+                    var deleteArticleGroup = DeleteArticleGroup(contractArticleGroup);
+                    if (!deleteArticleGroup)
+                        return false;
+                }
+                
                 using (var connection = CreateConnection(_connection))
                 {
                     connection.Open();
@@ -166,7 +173,7 @@ namespace Ehrmann.Core.Mapper.Sql.MSSQL
                     using (var command = CreateCommang(commandText, connection))
                     {
                         command.CommandTimeout = GetCommandTimeout();
-                        command.Parameters.Add(CreateParameter("@id", id));
+                        command.Parameters.Add(CreateParameter("@id", contract.Id));
                         command.ExecuteNonQuery();
                         var result = command.ExecuteNonQuery();
 

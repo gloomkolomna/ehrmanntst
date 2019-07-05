@@ -1,0 +1,1 @@
+﻿INSERT INTO ARTICLEGROUPS(Name,OwnerId) output INSERTED.Id VALUES(@name,@ownerId)

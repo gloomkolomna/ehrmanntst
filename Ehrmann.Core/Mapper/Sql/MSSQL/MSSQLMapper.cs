@@ -49,7 +49,7 @@ namespace Ehrmann.Core.Mapper.Sql.MSSQL
                     StartDate = DateTime.Parse(reader["StartDate"].ToString()),
                     Name = reader["Name"].ToString()
                 };
-                contract.ArticleGroups = GetArticleGroups(contract.Id);
+                contract.ArticleGroups = GetArticleGroups(contract);
 
                 return contract;
             }
@@ -61,7 +61,7 @@ namespace Ehrmann.Core.Mapper.Sql.MSSQL
             }
         }
 
-        protected ICoreArticleGroup GetArticleGroup(IDataRecord reader)
+        protected ICoreArticleGroup GetCoreArticleGroup(IDataRecord reader)
         {
             try
             {
@@ -71,7 +71,7 @@ namespace Ehrmann.Core.Mapper.Sql.MSSQL
                     OwnerId = int.Parse(reader["OwnerId"].ToString()),
                     Name = reader["Name"].ToString()
                 };
-                articleGroup.ConditionTypes = GetConditionTypes(articleGroup.Id);
+                articleGroup.ConditionTypes = GetConditionTypes(articleGroup);
 
                 return articleGroup;
             }

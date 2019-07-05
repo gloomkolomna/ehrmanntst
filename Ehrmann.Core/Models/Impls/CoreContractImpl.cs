@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using Ehrmann.Core.Mapper;
 using Ehrmann.Core.Models.Interfaces;
 
 namespace Ehrmann.Core.Models.Impls

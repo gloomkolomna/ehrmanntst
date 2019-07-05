@@ -83,6 +83,27 @@
   <ItemGroup>
     <EmbeddedResource Include="Mapper\Sql\MSSQL\DAL\Scripts\SQL\Contract\DeleteContract.sql" />
   </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Mapper\Sql\MSSQL\DAL\Scripts\SQL\ConditionType\DeleteConditionType.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Mapper\Sql\MSSQL\DAL\Scripts\SQL\ArticleGroup\DeleteArticleGroup.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Mapper\Sql\MSSQL\DAL\Scripts\SQL\ArticleGroup\UpdateArticleGroup.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Mapper\Sql\MSSQL\DAL\Scripts\SQL\ArticleGroup\CreateArticleGroup.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Mapper\Sql\MSSQL\DAL\Scripts\SQL\ArticleGroup\GetArticleGroup.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Mapper\Sql\MSSQL\DAL\Scripts\SQL\ConditionType\CreateConditionType.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Mapper\Sql\MSSQL\DAL\Scripts\SQL\ConditionType\UpdateConditionType.sql" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
