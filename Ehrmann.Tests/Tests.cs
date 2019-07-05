@@ -20,21 +20,21 @@ namespace Ehrmann.Tests
         public void CreateContractTest()
         {
             var contract = _ehrmannCore.CreateContract("Contract1", DateTime.Now, DateTime.MaxValue);
-            Assert.IsNull(contract, "Не удалось создать контракт");
+            Assert.IsNotNull(contract, "Не удалось создать контракт");
         }
 
         [Test(Description = "4efa0733-7ee8-4463-a15b-891ef0818f7a"), Order(2)]
         public void GetContractsTest()
         {
             var contracts = _ehrmannCore.GetContracts();
-            Assert.IsEmpty(contracts, "Не удалось получить контракты");
+            Assert.IsNotEmpty(contracts, "Не удалось получить контракты");
         }
 
         [Test(Description = "c2059942-ea39-4d58-8a41-db4f13814253"), Order(3)]
         public void GetContractTest()
         {
             var contract = _ehrmannCore.GetContract(1);
-            Assert.IsNull(contract, "Не удалось получить контракт");
+            Assert.IsNotNull(contract, "Не удалось получить контракт");
         }
     }
 }
