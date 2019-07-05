@@ -1,0 +1,1 @@
+﻿SELECT * FROM ARTICLEGROUPS WHERE OwnerId = @ownerId

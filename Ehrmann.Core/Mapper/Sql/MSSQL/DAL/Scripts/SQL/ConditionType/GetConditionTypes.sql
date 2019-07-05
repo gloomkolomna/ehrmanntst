@@ -1,0 +1,1 @@
+﻿SELECT * FROM CONDITIONTYPE WHERE OwnerId = @ownerId

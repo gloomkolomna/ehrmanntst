@@ -1,0 +1,1 @@
+﻿SELECT * FROM CONTRACTS WHERE Id = @id
