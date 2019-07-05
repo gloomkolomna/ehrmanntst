@@ -14,3 +14,9 @@ E:\tst\Ehrmann\Ehrmann\obj\Debug\Ehrmann.exe
 E:\tst\Ehrmann\Ehrmann\obj\Debug\Ehrmann.pdb
 E:\tst\Ehrmann\Ehrmann\bin\Debug\Ehrmann.Core.dll
 E:\tst\Ehrmann\Ehrmann\bin\Debug\Ehrmann.Core.pdb
+E:\tst\Ehrmann\Ehrmann\obj\Debug\View\MainView.g.cs
+E:\tst\Ehrmann\Ehrmann\obj\Debug\View\SelectView.g.cs
+E:\tst\Ehrmann\Ehrmann\obj\Debug\GeneratedInternalTypeHelper.g.cs
+E:\tst\Ehrmann\Ehrmann\obj\Debug\View\MainView.baml
+E:\tst\Ehrmann\Ehrmann\obj\Debug\View\SelectView.baml
+E:\tst\Ehrmann\Ehrmann\obj\Debug\View\Styles.baml

@@ -13,7 +13,7 @@
         <ResourceDictionary Source="View/Styles.xaml" />
     </Window.Resources>
     <Grid>
-        <view:SelectView Visibility="{Binding IsSelectApply, Converter={StaticResource BoolToVisibilityConverter}}" />
-        <view:MainView Visibility="{Binding IsSelectApply, Converter={StaticResource BoolToVisibilityConverterInverted}}" />
+        <view:SelectView Visibility="{Binding IsApplySelect, Converter={StaticResource BoolToVisibilityConverterInverted}}" />
+        <view:MainView Visibility="{Binding IsApplySelect, Converter={StaticResource BoolToVisibilityConverter}}" />
     </Grid>
 </Window>

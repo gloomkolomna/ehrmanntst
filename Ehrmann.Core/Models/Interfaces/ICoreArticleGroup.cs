@@ -5,7 +5,7 @@ namespace Ehrmann.Core.Models.Interfaces
     /// <summary>
     /// Артикульная группа
     /// </summary>
-    public interface ICoreArticleGroup : ICoreItem, ICoreValues
+    public interface ICoreArticleGroup : ICoreItem
     {
         /// <summary>
         /// Виды условий

@@ -22,7 +22,7 @@
             Grid.Row="2"
             Width="80"
             Height="21"
-            Command="{Binding ApplyCommand}"
+            Command="{Binding ApplySelectCommand}"
             Content="Применить"
             Cursor="Hand" />
     </Grid>
