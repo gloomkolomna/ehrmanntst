@@ -14,8 +14,8 @@
     </UserControl.Resources>
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="0.8*" />
-            <ColumnDefinition Width="0.2*" />
+            <ColumnDefinition Width="0.6*" />
+            <ColumnDefinition Width="0.4*" />
         </Grid.ColumnDefinitions>
 
         <Grid Grid.Column="0">
@@ -29,15 +29,15 @@
                 Margin="10"
                 HorizontalAlignment="Stretch"
                 VerticalAlignment="Stretch"
-                ItemsSource="{Binding Contracts}">
+                ItemsSource="{Binding Items}">
                 <TreeView.ItemTemplate>
-                    <HierarchicalDataTemplate DataType="{x:Type VM:ArticleGroupVm}" ItemsSource="{Binding ArticleGroups}">
+                    <HierarchicalDataTemplate DataType="{x:Type VM:ContractVm}" ItemsSource="{Binding Contracts}">
                         <Label Content="{Binding Name}" />
                         <HierarchicalDataTemplate.ItemTemplate>
-                            <HierarchicalDataTemplate DataType="{x:Type VM:ArticleGroupVm}" ItemsSource="{Binding ConditionTypes}">
+                            <HierarchicalDataTemplate DataType="{x:Type VM:ArticleGroupVm}" ItemsSource="{Binding ArticleGroups}">
                                 <Label Content="{Binding Name}" />
                                 <HierarchicalDataTemplate.ItemTemplate>
-                                    <DataTemplate DataType="{x:Type VM:ConditionTypeVm}">
+                                    <HierarchicalDataTemplate DataType="{x:Type VM:ArticleGroupVm}" ItemsSource="{Binding ConditionTypes}">
                                         <Grid>
                                             <Grid.ColumnDefinitions>
                                                 <ColumnDefinition Width="Auto" />
@@ -52,7 +52,25 @@
                                             <Label Grid.Column="3" Content="{Binding Rku}" />
                                             <Label Grid.Column="4" Content="{Binding RkuDistr}" />
                                         </Grid>
-                                    </DataTemplate>
+                                        <HierarchicalDataTemplate.ItemTemplate>
+                                            <DataTemplate DataType="{x:Type VM:ConditionTypeVm}">
+                                                <Grid>
+                                                    <Grid.ColumnDefinitions>
+                                                        <ColumnDefinition Width="Auto" />
+                                                        <ColumnDefinition Width="Auto" />
+                                                        <ColumnDefinition Width="Auto" />
+                                                        <ColumnDefinition Width="Auto" />
+                                                        <ColumnDefinition Width="Auto" />
+                                                    </Grid.ColumnDefinitions>
+                                                    <Label Grid.Column="0" Content="{Binding Name}" />
+                                                    <Label Grid.Column="1" Content="{Binding Retro}" />
+                                                    <Label Grid.Column="2" Content="{Binding RetroDistr}" />
+                                                    <Label Grid.Column="3" Content="{Binding Rku}" />
+                                                    <Label Grid.Column="4" Content="{Binding RkuDistr}" />
+                                                </Grid>
+                                            </DataTemplate>
+                                        </HierarchicalDataTemplate.ItemTemplate>
+                                    </HierarchicalDataTemplate>
                                 </HierarchicalDataTemplate.ItemTemplate>
                             </HierarchicalDataTemplate>
                         </HierarchicalDataTemplate.ItemTemplate>

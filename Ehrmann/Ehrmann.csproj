@@ -62,6 +62,7 @@
     <Compile Include="ViewModel\ArticleGroupVm.cs" />
     <Compile Include="ViewModel\ConditionTypeVm.cs" />
     <Compile Include="ViewModel\ContractVm.cs" />
+    <Compile Include="ViewModel\ItemsVm.cs" />
     <Compile Include="ViewModel\MainViewModel.cs" />
     <Compile Include="Common\ObservableObject.cs" />
     <Compile Include="View\MainView.xaml.cs">
