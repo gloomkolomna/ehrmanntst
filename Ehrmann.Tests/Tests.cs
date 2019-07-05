@@ -86,7 +86,7 @@ namespace Ehrmann.Tests
         [Test(Description = "af1bc6b4-15e5-43ec-bdd6-7795122c0a7d"), Order(7)]
         public void GetAricleGroupsTest()
         {
-            var contract = _ehrmannCore.GetContract(1);
+            var contract = _ehrmannCore.GetContract(5);
             Assert.IsNotNull(contract, "Не удалось получить контракт");
             var articleGroups = _ehrmannCore.GetArticleGroups(contract);
             Assert.IsNotEmpty(articleGroups, "Не удалось получить коллекцию артикульных групп контракта");
@@ -95,7 +95,7 @@ namespace Ehrmann.Tests
         [Test(Description = "46a4a299-1e8c-42d5-8fc7-d71555b31ce4"), Order(8)]
         public void GetAricleGroupTest()
         {
-            var contract = _ehrmannCore.GetContract(1);
+            var contract = _ehrmannCore.GetContract(5);
             Assert.IsNotNull(contract, "Не удалось получить контракт");
             var articleGroup = _ehrmannCore.GetArticleGroup(1);
             Assert.IsNotNull(articleGroup, "Не удалось получить артикульную группу");
@@ -156,7 +156,7 @@ namespace Ehrmann.Tests
         [Test(Description = "4deabf37-a05d-4f18-90f2-6589a7bea45a"), Order(12)]
         public void GetConditionTypesTest()
         {
-            var contract = _ehrmannCore.GetContract(1);
+            var contract = _ehrmannCore.GetContract(5);
             Assert.IsNotNull(contract, "Не удалось получить контракт");
             var articleGroup = contract.ArticleGroups.FirstOrDefault();
             Assert.IsNotNull(articleGroup, "Не удалось получить артикульную группу контракта");
@@ -167,7 +167,7 @@ namespace Ehrmann.Tests
         [Test(Description = "80c1d1d2-2fd1-4f80-acc6-11e2e4d331f2"), Order(13)]
         public void GetConditionTypeTest()
         {
-            var contract = _ehrmannCore.GetContract(1);
+            var contract = _ehrmannCore.GetContract(5);
             Assert.IsNotNull(contract, "Не удалось получить контракт");
             var articleGroup = _ehrmannCore.GetArticleGroup(1);
             Assert.IsNotNull(articleGroup, "Не удалось получить артикульную группу");
@@ -181,7 +181,7 @@ namespace Ehrmann.Tests
             var contracts = _ehrmannCore.GetContracts();
             Assert.IsNotEmpty(contracts, "Не удалось получить контракты");
 
-            var contract = contracts.FirstOrDefault();
+            var contract = contracts.LastOrDefault();
             if (contract != null)
             {
                 var articleGroup = contract.ArticleGroups.FirstOrDefault();

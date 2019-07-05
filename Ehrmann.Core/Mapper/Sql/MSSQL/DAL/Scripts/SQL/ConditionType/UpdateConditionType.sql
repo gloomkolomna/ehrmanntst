@@ -1,7 +1,7 @@
-﻿UPDATE CONTRACTS Set 
-Name = @Name, 
+﻿UPDATE CONDITIONTYPE Set 
+Name = @name, 
 Retro = @retro, 
 RetroDistr = @retroDistr, 
 Rku = @rku, 
-@RkuDistr = @rkuDistr
+RkuDistr = @rkuDistr
 WHERE Id = @id
