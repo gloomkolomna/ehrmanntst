@@ -1,0 +1,10 @@
+E:\tst\Ehrmann\Ehrmann.Tests\bin\Debug\Ehrmann.Tests.dll
+E:\tst\Ehrmann\Ehrmann.Tests\bin\Debug\Ehrmann.Tests.pdb
+E:\tst\Ehrmann\Ehrmann.Tests\bin\Debug\Ehrmann.Core.dll
+E:\tst\Ehrmann\Ehrmann.Tests\bin\Debug\nunit.framework.dll
+E:\tst\Ehrmann\Ehrmann.Tests\bin\Debug\Ehrmann.Core.pdb
+E:\tst\Ehrmann\Ehrmann.Tests\bin\Debug\nunit.framework.pdb
+E:\tst\Ehrmann\Ehrmann.Tests\bin\Debug\nunit.framework.xml
+E:\tst\Ehrmann\Ehrmann.Tests\obj\Debug\Ehrmann.Tests.csprojResolveAssemblyReference.cache
+E:\tst\Ehrmann\Ehrmann.Tests\obj\Debug\Ehrmann.Tests.dll
+E:\tst\Ehrmann\Ehrmann.Tests\obj\Debug\Ehrmann.Tests.pdb

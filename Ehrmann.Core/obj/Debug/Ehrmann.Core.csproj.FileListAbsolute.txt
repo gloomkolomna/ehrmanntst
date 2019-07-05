@@ -1,0 +1,5 @@
+E:\tst\Ehrmann\Ehrmann.Core\bin\Debug\Ehrmann.Core.dll
+E:\tst\Ehrmann\Ehrmann.Core\bin\Debug\Ehrmann.Core.pdb
+E:\tst\Ehrmann\Ehrmann.Core\obj\Debug\Ehrmann.Core.csprojResolveAssemblyReference.cache
+E:\tst\Ehrmann\Ehrmann.Core\obj\Debug\Ehrmann.Core.dll
+E:\tst\Ehrmann\Ehrmann.Core\obj\Debug\Ehrmann.Core.pdb
