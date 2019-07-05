@@ -9,11 +9,11 @@ namespace Ehrmann.Core.Models.Interfaces
     public interface ICoreContract : ICoreItem
     {
         /// <summary>
-        /// Дата с
+        /// Начало контракта
         /// </summary>
         DateTime StartDate { get; set; }
         /// <summary>
-        /// Дата по
+        /// Окончание контракта
         /// </summary>
         DateTime EndDate { get; set; }
         /// <summary>

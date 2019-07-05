@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using Ehrmann.Core.Models.Interfaces;
 
 namespace Ehrmann.Core.Mapper
@@ -7,7 +8,7 @@ namespace Ehrmann.Core.Mapper
     {
         ICoreContract GetContract(int id);
         IEnumerable<ICoreContract> GetContracts();
-        ICoreContract CreateContract();
+        ICoreContract CreateContract(string name, DateTime startDate, DateTime endDate);
         void UpdateContract(ICoreContract contract);
         void DeleteContract(int id);
     }

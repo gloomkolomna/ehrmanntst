@@ -1,0 +1,1 @@
+﻿INSERT INTO CONTRACTS(Name,StartDate,EndDate) output INSERTED.Id VALUES(@name,@startDate,@endDate)

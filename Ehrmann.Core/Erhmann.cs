@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using Ehrmann.Core.Mapper;
 using Ehrmann.Core.Models.Interfaces;
 
@@ -23,9 +24,9 @@ namespace Ehrmann.Core
             return _mapper.GetContracts();
         }
 
-        public ICoreContract CreateContract()
+        public ICoreContract CreateContract(string name, DateTime startDate, DateTime endDate)
         {
-            return _mapper.CreateContract();
+            return _mapper.CreateContract(name, startDate, endDate);
         }
 
         public void UpdateContract(ICoreContract contract)

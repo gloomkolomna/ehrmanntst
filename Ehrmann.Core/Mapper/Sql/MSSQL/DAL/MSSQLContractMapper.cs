@@ -92,11 +92,31 @@ namespace Ehrmann.Core.Mapper.Sql.MSSQL
 
         
 
-        public override ICoreContract CreateContract()
+        public override ICoreContract CreateContract(string name, DateTime startDate, DateTime endDate)
         {
             try
             {
-                throw new NotImplementedException();
+                using (var connection = CreateConnection(_connection))
+                {
+                    connection.Open();
+                    var commandText = GetScript(ScriptsSection, ScriptsSqlPath + @"\Contract", "CreateContract");
+                    using (var command = CreateCommang(commandText, connection))
+                    {
+                        command.CommandTimeout = GetCommandTimeout();
+                        command.Parameters.Add(CreateParameter("@name", name));
+                        command.Parameters.Add(CreateParameter("@startDate", startDate));
+                        command.Parameters.Add(CreateParameter("@endDate", endDate));
+                        var id = (int) command.ExecuteScalar();
+
+                        return new CoreContractImpl()
+                        {
+                            Id = id,
+                            Name = name,
+                            StartDate = startDate,
+                            EndDate = endDate,
+                        };
+                    }
+                }
             }
             catch (Exception ex)
             {

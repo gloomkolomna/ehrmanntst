@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ehrmann", "Ehrmann\Ehrmann.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ehrmann.Core", "Ehrmann.Core\Ehrmann.Core.csproj", "{F769A106-9831-4C3A-B7E8-CF409C89E361}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ehrmann.Tests", "Ehrmann.Tests\Ehrmann.Tests.csproj", "{9FF22DD3-7C8F-4682-AA8D-F9B2466037DB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{F769A106-9831-4C3A-B7E8-CF409C89E361}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F769A106-9831-4C3A-B7E8-CF409C89E361}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F769A106-9831-4C3A-B7E8-CF409C89E361}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9FF22DD3-7C8F-4682-AA8D-F9B2466037DB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9FF22DD3-7C8F-4682-AA8D-F9B2466037DB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9FF22DD3-7C8F-4682-AA8D-F9B2466037DB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9FF22DD3-7C8F-4682-AA8D-F9B2466037DB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

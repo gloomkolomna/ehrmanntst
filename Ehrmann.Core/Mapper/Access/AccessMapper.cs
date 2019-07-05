@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using Ehrmann.Core.Models.Interfaces;
 
 namespace Ehrmann.Core.Mapper.Access
@@ -22,9 +23,9 @@ namespace Ehrmann.Core.Mapper.Access
             throw new System.NotImplementedException();
         }
 
-        public ICoreContract CreateContract()
+        public ICoreContract CreateContract(string name, DateTime startDate, DateTime endDate)
         {
-            throw new System.NotImplementedException();
+            throw new NotImplementedException();
         }
 
         public void UpdateContract(ICoreContract contract)

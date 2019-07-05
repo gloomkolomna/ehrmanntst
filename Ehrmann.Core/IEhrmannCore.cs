@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using Ehrmann.Core.Models.Interfaces;
 
 namespace Ehrmann.Core
@@ -24,7 +25,10 @@ namespace Ehrmann.Core
         /// <summary>
         /// Создание контракта
         /// </summary>
-        ICoreContract CreateContract();
+        /// <param name="name">Название</param>
+        /// <param name="startDate">Начало контракта</param>
+        /// <param name="endDate">Окончание контракта</param>
+        ICoreContract CreateContract(string name, DateTime startDate, DateTime endDate);
 
         /// <summary>
         /// Обновление контракта
