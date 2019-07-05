@@ -126,11 +126,26 @@ namespace Ehrmann.Core.Mapper.Sql.MSSQL
             }
         }
 
-        public override void UpdateContract(ICoreContract contract)
+        public override ICoreContract UpdateContract(ICoreContract contract)
         {
             try
             {
-                throw new NotImplementedException();
+                using (var connection = CreateConnection(_connection))
+                {
+                    connection.Open();
+                    var commandText = GetScript(ScriptsSection, ScriptsSqlPath + @"\Contract", "UpdateContract");
+                    using (var command = CreateCommang(commandText, connection))
+                    {
+                        command.CommandTimeout = GetCommandTimeout();
+                        command.Parameters.Add(CreateParameter("@id", contract.Id));
+                        command.Parameters.Add(CreateParameter("@name", contract.Name));
+                        command.Parameters.Add(CreateParameter("@startDate", contract.StartDate));
+                        command.Parameters.Add(CreateParameter("@endDate", contract.EndDate));
+                        command.ExecuteScalar();
+
+                        return contract;
+                    }
+                }
             }
             catch (Exception ex)
             {
@@ -140,11 +155,24 @@ namespace Ehrmann.Core.Mapper.Sql.MSSQL
             }
         }
 
-        public override void DeleteContract(int id)
+        public override bool DeleteContract(int id)
         {
             try
             {
-                throw new NotImplementedException();
+                using (var connection = CreateConnection(_connection))
+                {
+                    connection.Open();
+                    var commandText = GetScript(ScriptsSection, ScriptsSqlPath + @"\Contract", "DeleteContract");
+                    using (var command = CreateCommang(commandText, connection))
+                    {
+                        command.CommandTimeout = GetCommandTimeout();
+                        command.Parameters.Add(CreateParameter("@id", id));
+                        command.ExecuteNonQuery();
+                        var result = command.ExecuteNonQuery();
+
+                        return result == 0;
+                    }
+                }
             }
             catch (Exception ex)
             {

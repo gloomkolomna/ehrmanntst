@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using Ehrmann.Core;
 using NUnit.Framework;
 
@@ -35,6 +36,36 @@ namespace Ehrmann.Tests
         {
             var contract = _ehrmannCore.GetContract(1);
             Assert.IsNotNull(contract, "Не удалось получить контракт");
+        }
+
+        [Test(Description = "0d8e0492-e615-4149-96c7-ff9f29c6c2ec"), Order(4)]
+        public void UpdateContract()
+        {
+            var contracts = _ehrmannCore.GetContracts();
+            Assert.IsNotEmpty(contracts, "Не удалось получить контракты");
+
+            var contract = contracts.LastOrDefault();
+            if (contract != null)
+            {
+                contract.EndDate = DateTime.Now;
+                
+                var result = _ehrmannCore.UpdateContract(contract);
+                Assert.IsNotNull(result, $"Не удалось обновить контракт {contract.Id}");
+            }
+        }
+
+        [Test(Description = "fc6ae615-8d01-4fd4-91d1-7d612be2eee3"), Order(5)]
+        public void DeleteContract()
+        {
+            var contracts = _ehrmannCore.GetContracts();
+            Assert.IsNotEmpty(contracts, "Не удалось получить контракты");
+
+            var contract = contracts.LastOrDefault();
+            if (contract != null)
+            {
+                var result = _ehrmannCore.DeleteContract(contract.Id);
+                Assert.IsTrue(result, $"Не удалось удалить контракт {contract.Id}");
+            }
         }
     }
 }

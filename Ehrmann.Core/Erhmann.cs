@@ -29,14 +29,14 @@ namespace Ehrmann.Core
             return _mapper.CreateContract(name, startDate, endDate);
         }
 
-        public void UpdateContract(ICoreContract contract)
+        public ICoreContract UpdateContract(ICoreContract contract)
         {
-            _mapper.UpdateContract(contract);
+            return _mapper.UpdateContract(contract);
         }
 
-        public void DeleteContract(int id)
+        public bool DeleteContract(int id)
         {
-            _mapper.DeleteContract(id);
+            return _mapper.DeleteContract(id);
         }
     }
 }

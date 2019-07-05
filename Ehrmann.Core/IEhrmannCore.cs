@@ -34,12 +34,14 @@ namespace Ehrmann.Core
         /// Обновление контракта
         /// </summary>
         /// <param name="contract">Контракт</param>
-        void UpdateContract(ICoreContract contract);
+        /// <returns>Обновленный контракт</returns>
+        ICoreContract UpdateContract(ICoreContract contract);
 
         /// <summary>
         /// Удаление контракта
         /// </summary>
         /// <param name="id">Идентификатор контракта для удаления</param>
-        void DeleteContract(int id);
+        /// <returns><c>true</c> если операция прошла успешно, <c>false</c> - в случае неудачи</returns>
+        bool DeleteContract(int id);
     }
 }

@@ -9,7 +9,7 @@ namespace Ehrmann.Core.Mapper
         ICoreContract GetContract(int id);
         IEnumerable<ICoreContract> GetContracts();
         ICoreContract CreateContract(string name, DateTime startDate, DateTime endDate);
-        void UpdateContract(ICoreContract contract);
-        void DeleteContract(int id);
+        ICoreContract UpdateContract(ICoreContract contract);
+        bool DeleteContract(int id);
     }
 }

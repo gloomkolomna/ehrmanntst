@@ -28,12 +28,12 @@ namespace Ehrmann.Core.Mapper.Access
             throw new NotImplementedException();
         }
 
-        public void UpdateContract(ICoreContract contract)
+        public ICoreContract UpdateContract(ICoreContract contract)
         {
             throw new System.NotImplementedException();
         }
 
-        public void DeleteContract(int id)
+        public bool DeleteContract(int id)
         {
             throw new System.NotImplementedException();
         }
