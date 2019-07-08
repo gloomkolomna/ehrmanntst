@@ -16,11 +16,11 @@ using System.Windows.Shapes;
 namespace Ehrmann.View
 {
     /// <summary>
-    /// Interaction logic for SelectView.xaml
+    /// Interaction logic for StartView.xaml
     /// </summary>
-    public partial class SelectView : UserControl
+    public partial class StartView : UserControl
     {
-        public SelectView()
+        public StartView()
         {
             InitializeComponent();
         }

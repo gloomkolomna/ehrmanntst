@@ -12,6 +12,7 @@ namespace Ehrmann.ViewModel
         private ICommand _applySelectCommand;
         private IEhrmannCore _ehrmannCore;
         private ObservableCollection<ItemsVm> _items;
+        private ContractVm _selectedContract;
 
         public string ConnectionString
         {
@@ -42,12 +43,12 @@ namespace Ehrmann.ViewModel
 
         private void LoadData()
         {
-            _ehrmannCore = EhrmannCore.Create(SourceType.MSSQL, ConnectionString);
-            var contracts = _ehrmannCore.GetContracts();
+            var core = Helpers.GetEhrmannCore(SourceType.MSSQL, ConnectionString);
+            var contracts = Helpers.GetContracts(core);
             if (contracts.Any())
             {
                 Items = new ObservableCollection<ItemsVm>();
-                var item = new ItemsVm(contracts);
+                var item = new ItemsVm(contracts, this);
                 Items.Add(item);
             }
         }
@@ -56,6 +57,19 @@ namespace Ehrmann.ViewModel
         {
             get { return _items; }
             set { _items = value; OnPropertyChanged(); }
+        }
+
+        public ContractVm SelectedContract
+        {
+            get
+            {
+                return _selectedContract;
+            }
+            set
+            {
+                _selectedContract = value;
+                OnPropertyChanged();
+            }
         }
     }
 }

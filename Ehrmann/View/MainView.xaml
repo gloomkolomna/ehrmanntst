@@ -14,8 +14,8 @@
     </UserControl.Resources>
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="0.6*" />
             <ColumnDefinition Width="0.4*" />
+            <ColumnDefinition Width="0.6*" />
         </Grid.ColumnDefinitions>
 
         <Grid Grid.Column="0">
@@ -26,48 +26,23 @@
 
             <TreeView
                 x:Name="ContractTreeView"
+                Grid.Row="0"
                 Margin="10"
                 HorizontalAlignment="Stretch"
                 VerticalAlignment="Stretch"
                 ItemsSource="{Binding Items}">
                 <TreeView.ItemTemplate>
                     <HierarchicalDataTemplate DataType="{x:Type VM:ContractVm}" ItemsSource="{Binding Contracts}">
-                        <Label Content="{Binding Name}" />
+                        <TextBlock Text="{Binding Name}" />
                         <HierarchicalDataTemplate.ItemTemplate>
                             <HierarchicalDataTemplate DataType="{x:Type VM:ArticleGroupVm}" ItemsSource="{Binding ArticleGroups}">
-                                <Label Content="{Binding Name}" />
+                                <TextBlock Text="{Binding Name}" />
                                 <HierarchicalDataTemplate.ItemTemplate>
                                     <HierarchicalDataTemplate DataType="{x:Type VM:ArticleGroupVm}" ItemsSource="{Binding ConditionTypes}">
-                                        <Grid>
-                                            <Grid.ColumnDefinitions>
-                                                <ColumnDefinition Width="Auto" />
-                                                <ColumnDefinition Width="Auto" />
-                                                <ColumnDefinition Width="Auto" />
-                                                <ColumnDefinition Width="Auto" />
-                                                <ColumnDefinition Width="Auto" />
-                                            </Grid.ColumnDefinitions>
-                                            <Label Grid.Column="0" Content="{Binding Name}" />
-                                            <Label Grid.Column="1" Content="{Binding Retro}" />
-                                            <Label Grid.Column="2" Content="{Binding RetroDistr}" />
-                                            <Label Grid.Column="3" Content="{Binding Rku}" />
-                                            <Label Grid.Column="4" Content="{Binding RkuDistr}" />
-                                        </Grid>
+                                        <TextBlock Text="{Binding Name}" />
                                         <HierarchicalDataTemplate.ItemTemplate>
                                             <DataTemplate DataType="{x:Type VM:ConditionTypeVm}">
-                                                <Grid>
-                                                    <Grid.ColumnDefinitions>
-                                                        <ColumnDefinition Width="Auto" />
-                                                        <ColumnDefinition Width="Auto" />
-                                                        <ColumnDefinition Width="Auto" />
-                                                        <ColumnDefinition Width="Auto" />
-                                                        <ColumnDefinition Width="Auto" />
-                                                    </Grid.ColumnDefinitions>
-                                                    <Label Grid.Column="0" Content="{Binding Name}" />
-                                                    <Label Grid.Column="1" Content="{Binding Retro}" />
-                                                    <Label Grid.Column="2" Content="{Binding RetroDistr}" />
-                                                    <Label Grid.Column="3" Content="{Binding Rku}" />
-                                                    <Label Grid.Column="4" Content="{Binding RkuDistr}" />
-                                                </Grid>
+                                                <TextBlock Text="{Binding Name}" />
                                             </DataTemplate>
                                         </HierarchicalDataTemplate.ItemTemplate>
                                     </HierarchicalDataTemplate>
@@ -77,6 +52,40 @@
                     </HierarchicalDataTemplate>
                 </TreeView.ItemTemplate>
             </TreeView>
+
+            <!--<Grid Grid.Row="1" Margin="12,0,0,12">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
+
+                <Button
+                    Grid.Column="0"
+                    Margin="6,0"
+                    Padding="3"
+                    Command="{Binding AddContractCommand}"
+                    Content="Добавить"
+                    Cursor="Hand" />
+                <Button
+                    Grid.Column="1"
+                    Margin="6,0"
+                    Padding="3"
+                    Command="{Binding UpdateContractCommand}"
+                    Content="Изменить"
+                    Cursor="Hand" />
+                <Button
+                    Grid.Column="2"
+                    Margin="6,0"
+                    Padding="3"
+                    Command="{Binding DeleteContractCommand}"
+                    Content="Удалить"
+                    Cursor="Hand" />
+            </Grid>-->
+        </Grid>
+
+        <Grid Grid.Column="1" Margin="0,12,0,0">
+            <local:ContractView DataContext="{Binding SelectedContract}" />
         </Grid>
     </Grid>
 </UserControl>

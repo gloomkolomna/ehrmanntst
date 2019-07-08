@@ -9,6 +9,7 @@ namespace Ehrmann.ViewModel
     {
         private string _name;
         private ObservableCollection<ConditionTypeVm> _conditionTypes;
+        private ArticleGroupVm contractArticleGroup;
 
         public ArticleGroupVm(ICoreArticleGroup coreArticleGroup, int coreContractId)
         {

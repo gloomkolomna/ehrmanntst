@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Linq;
 using Ehrmann.Core.Models.Interfaces;
 
 namespace Ehrmann.ViewModel
@@ -11,6 +12,8 @@ namespace Ehrmann.ViewModel
         private DateTime _startDate;
         private DateTime _endDate;
         private ObservableCollection<ArticleGroupVm> _articleGroups;
+        private bool _isSelected;
+        private MainViewModel _owner;
 
         public ContractVm(ICoreContract coreContract)
         {
@@ -29,6 +32,11 @@ namespace Ehrmann.ViewModel
 
                 ArticleGroups.Add(articleGroup);
             }
+        }
+
+        public ContractVm(ICoreContract coreContract, MainViewModel owner) : this(coreContract)
+        {
+            _owner = owner;
         }
 
         public int Id { get; set; }
@@ -55,6 +63,18 @@ namespace Ehrmann.ViewModel
         {
             get { return _articleGroups; }
             set { _articleGroups = value; OnPropertyChanged(); }
+        }
+
+        public bool IsSelected
+        {
+            get { return _isSelected; }
+            set
+            {
+                _isSelected = value;
+                OnPropertyChanged();
+                if (value)
+                    _owner.SelectedContract = this;
+            }
         }
     }
 }
